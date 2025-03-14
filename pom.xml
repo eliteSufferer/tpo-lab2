@@ -22,6 +22,22 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        
+        <!-- Mockito для создания мок-объектов -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.5.1</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Mockito-inline для мокирования статических методов -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>4.5.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
