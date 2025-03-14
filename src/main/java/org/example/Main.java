@@ -17,8 +17,12 @@ public class Main {
 
     public static void exportToCsv(String filename, double start, double end, double step, double epsilon) throws IOException {
         try (FileWriter writer = new FileWriter(filename)) {
-            writer.write("X,Result\n");
-            for (double x = start; x <= end; x += step) {
+            writer.write("X,Result\n"); // Заголовок CSV-файла
+
+            // Используем цикл с целочисленным счётчиком для избежания погрешности
+            int steps = (int) Math.round((end - start) / step); // Количество шагов
+            for (int i = 0; i <= steps; i++) {
+                double x = start + i * step; // Точное значение x
                 try {
                     double result = calculate(x, epsilon);
                     writer.write(x + "," + result + "\n");

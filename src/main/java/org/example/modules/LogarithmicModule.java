@@ -15,12 +15,13 @@ public class LogarithmicModule {
     public static double calculate(double x, double epsilon) {
         double lnX = lnImpl.apply(x, epsilon);
 
-        double log2X = lnX / LogarithmicFunctions.ln(2, epsilon);
-        double log5X = lnX / LogarithmicFunctions.ln(5, epsilon);
-        double log10X = lnX / LogarithmicFunctions.ln(10, epsilon);
+        double log2X = LogarithmicFunctions.log2(x, epsilon);
+        double log5X = LogarithmicFunctions.log5(x, epsilon);
+        double log10X = LogarithmicFunctions.log10(x, epsilon);
 
         double term1 = Math.pow(Math.pow(lnX, 3), 2);
-        double term2 = (log5X - log10X) * (log5X / log2X);
-        return term1 + log2X - term2;
+        double term2 = (log5X - log10X);
+        double term3 = (log5X / log2X);
+        return ((term1 + log2X) - term2) * term3;
     }
 }

@@ -46,4 +46,18 @@ public class TrigonometricFunctionsTest {
         double result = TrigonometricFunctions.cos(x, EPSILON);
         assertEquals(-1.0, result, EPSILON);
     }
+
+    @Test
+    public void testSec() {
+        double x = 0;
+        double result = TrigonometricFunctions.sec(x, EPSILON);
+        assertEquals(1.0, result, EPSILON);
+    }
+    
+    @Test
+    public void testCsc() {
+        double x = Math.PI / 2;
+        double result = TrigonometricFunctions.csc(x, EPSILON);
+        assertEquals(1.0, result, EPSILON);
+    }
 }
